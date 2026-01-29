@@ -5,6 +5,7 @@ dependencies:
   - python<3.14
   - pip
   - pip:
+    - nibabel
     - git+https://github.com/PTB-MR/mrpro.git@dicom_none_error#egg=mrpro[notebooks]
     - pre-commit
 
