@@ -6,6 +6,6 @@ dependencies:
   - pip
   - pip:
     - nibabel
-    - git+https://github.com/PTB-MR/mrpro.git@dicom_none_error#egg=mrpro[notebooks]
+    - "mrpro[notebooks] @ git+https://github.com/PTB-MR/mrpro.git@main"
     - pre-commit
 
