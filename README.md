@@ -6,4 +6,6 @@
 Image reconstruction and processing of qualitative and quantitative MR raw data acquired at field strength ranging from 55mT to 0.55T.
 
 The raw k-space data and reconstructed image data can be found at the following repositories:
+- [i3M (Valencia, Spain), Physio1](https://zenodo.org/records/18460613)
+- [IBT-CMR (Zurich, Switzerland), Philips Ingenia Ambition X, ramped down to 0.6T](https://zenodo.org/records/18847561)
 
