@@ -23,11 +23,10 @@ def kdata_ktraj_to_bart(kdata):
     
 
 # %%
-data_folder = Path('/example_data')
-fnames = ['/example_data/Subject12/raw/pd_tse_sag_Right.mrd',
-          '/example_data/Subject12/raw/t1_tse_sag_Right.mrd',
-          '/example_data/Subject12/raw/t2_tse_sag_Right.mrd']
-slice_idx = 9
+fnames = ['/example_data/Subject 10/Qualitative protocol/Subject10-Brain/ISMRMRD/Subject10-Brain-PD.h5',
+          '/example_data/Subject 10/Qualitative protocol/Subject10-Brain/ISMRMRD/Subject10-Brain-T1.h5',
+          '/example_data/Subject 10/Qualitative protocol/Subject10-Brain/ISMRMRD/Subject10-Brain-T2.h5',]
+slice_idx = 1
 recons = []
 for fname in fnames:
     # PREPARE DATA - MRPRO
@@ -74,7 +73,7 @@ for fname in fnames:
 
 
     #  RECON DATA - MRIRECO_JL
-    mrireco_str = f'julia /recon_scripts/run_mrireco_julia.jl "{fname}"'
+    mrireco_str = f'julia /recon_scripts/compare_mrireco_julia.jl "{fname}"'
     status = spr.run(mrireco_str , shell=True)
     assert status.returncode == 0, 'MriReco.jl reconstruction failed'
     img_mrireco = np.abs(np.squeeze(np.load('mri_reco_output.npz')['img']))
@@ -114,7 +113,7 @@ for cidx, (contrast, contrast_name) in enumerate(zip(recons, ['PDw', 'T1w', 'T2w
         vmin = np.percentile(img, 1)
         vmax = np.percentile(img, 99)
         
-        ax[cidx, ridx].imshow(np.rot90(img, 1), cmap='gray', vmin=vmin, vmax=vmax)
+        ax[cidx, ridx].imshow(np.rot90(img, -1), cmap='gray', vmin=vmin, vmax=vmax)
             
         # Top: method name (first row only)
         if cidx == 0:

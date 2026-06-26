@@ -61,8 +61,10 @@ RUN rm download_data.sh
 
 # reconstruction code
 RUN mkdir /recon_scripts
-COPY recon_scripts/run_mrireco_julia.jl /recon_scripts
-COPY recon_scripts/run_all.py /recon_scripts
+COPY recon_scripts/compare_mrireco_julia.jl /recon_scripts
+COPY recon_scripts/compare_recon_packages.py /recon_scripts
+COPY recon_scripts/compare_t2_mapping.py /recon_scripts
+COPY recon_scripts/compare_trajectories.py /recon_scripts
 
 ENTRYPOINT ["/bin/bash"]
 

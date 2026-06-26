@@ -10,7 +10,8 @@ ${APT_GET_INSTALL} make gcc g++ cpp libfftw3-dev liblapacke-dev libpng-dev libop
 wget https://github.com/mrirecon/bart/archive/v1.0.00.tar.gz
 tar xzvf v1.0.00.tar.gz
 cd bart-1.0.00
-make CUDA=1 CUDA_BASE=/usr/local/cuda LDFLAGS="-L/usr/local/cuda/lib64"
+# make CUDA=1 CUDA_BASE=/usr/local/cuda LDFLAGS="-L/usr/local/cuda/lib64"
+make CUDA=0
 
 apt-get clean
 
