@@ -31,9 +31,15 @@ activate the environment
 ```
 conda activate reco_env
 ```
-and reconstruct the qualitative images of the right knee of Subject12 obtained by PUC on a Siemens MAGNETOM Free.Max 0.55T
+and then run any of the reconstruction scripts
 ```
 python recon_scripts/compare_recon_packages.py 
+```
+```
+python recon_scripts/compare_t2_mapping.py 
+```
+```
+python recon_scripts/compare_trajectories.py 
 ```
 
 
