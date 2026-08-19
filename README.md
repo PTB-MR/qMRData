@@ -11,3 +11,29 @@ The raw k-space data and reconstructed image data can be found at the following 
 - [PUC (Santiago de Chile, Chile), Siemens MAGNETOM Free.Max 0.55T](https://doi.org/10.5281/zenodo.19189305)
 - [Leiden University Medical Center (Leiden, The Netherlands)](https://zenodo.org/records/19661402)
 
+## Reconstruction with different software packages
+
+We demonstrate how the provided data can be reconstructed with these reconstruction packages:
+- [BART](https://mrirecon.codeberg.page/)
+- [MRpro](https://mrpro.rocks/)
+- [SigPy](https://sigpy.readthedocs.io/en/latest/)
+- [MriReco](https://github.com/MagneticResonanceImaging/MRIReco.jl)
+
+To install all these packages in the same environment, we provide a Dockerfile. Simply build the Docker image
+```
+docker build -t qmri_data .
+```
+start the container with a mapped folder to save the obtained figure in
+```
+docker run --rm -it -v /output:/output qmri_data
+```
+activate the environment
+```
+conda activate reco_env
+```
+and reconstruct the qualitative images of the right knee of Subject12 obtained by PUC on a Siemens MAGNETOM Free.Max 0.55T
+```
+python recon_scripts/run_all.py 
+```
+
+
