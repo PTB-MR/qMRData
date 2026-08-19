@@ -106,7 +106,7 @@ for fname in fnames:
 
 
 # VIsualisation
-fig, ax = plt.subplots(3,4, figsize=(16, 10))
+fig, ax = plt.subplots(3,4, figsize=(11, 10))
 for cidx, (contrast, contrast_name) in enumerate(zip(recons, ['PDw', 'T1w', 'T2w'])):
     for ridx, (img, package_name) in enumerate(zip(contrast, ['BART', 'MRpro', 'MriReco', 'SigPy'])):
 
